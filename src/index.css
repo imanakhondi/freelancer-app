@@ -1,0 +1,205 @@
+@import url("/fonts.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+
+    &,
+    &.light-mode {
+      --background-app-rgb: 255, 255, 255;
+      --color-primary-900: 58, 123, 213;
+      --color-primary-800: 74, 144, 226;
+      --color-primary-700: 90, 165, 239;
+      --color-primary-600: 106, 186, 252;
+      --color-primary-500: 122, 207, 255;
+      --color-primary-400: 138, 218, 255;
+      --color-primary-300: 154, 229, 255;
+      --color-primary-200: 170, 240, 255;
+      --color-primary-100: 186, 251, 255;
+      --color-primary-50: 202, 255, 255;
+      --color-secondary-900: 34, 40, 49;
+      --color-secondary-800: 45, 52, 62;
+      --color-secondary-700: 60, 72, 83;
+      --color-secondary-600: 79, 93, 105;
+      --color-secondary-500: 120, 130, 140;
+      --color-secondary-400: 170, 180, 190;
+      --color-secondary-300: 200, 210, 220;
+      --color-secondary-200: 220, 230, 240;
+      --color-secondary-100: 240, 245, 250;
+      --color-secondary-50: 248, 250, 252;
+      --color-secondary-0: 255, 255, 255;
+      --color-success: 76, 175, 80;
+      --color-warning: 255, 193, 7;
+      --color-error: 244, 67, 54;
+      --color-red-500: 239, 83, 80;
+      --color-red-300: 255, 138, 128;
+    }
+
+    &.dark-mode {
+      --background-app-rgb: 34, 40, 49;
+      --color-primary-900: 58, 123, 213;
+      --color-primary-800: 74, 144, 226;
+      --color-primary-700: 90, 165, 239;
+      --color-primary-600: 106, 186, 252;
+      --color-primary-500: 122, 207, 255;
+      --color-primary-400: 138, 218, 255;
+      --color-primary-300: 154, 229, 255;
+      --color-primary-200: 170, 240, 255;
+      --color-primary-100: 186, 251, 255;
+      --color-primary-50: 202, 255, 255;
+      --color-secondary-900: 248, 250, 252;
+      --color-secondary-800: 240, 245, 250;
+      --color-secondary-700: 220, 230, 240;
+      --color-secondary-600: 200, 210, 220;
+      --color-secondary-500: 170, 180, 190;
+      --color-secondary-400: 120, 130, 140;
+      --color-secondary-300: 79, 93, 105;
+      --color-secondary-200: 60, 72, 83;
+      --color-secondary-100: 45, 52, 62;
+      --color-secondary-50: 34, 40, 49;
+      --color-secondary-0: 24, 33, 47;
+      --backdrop-color: 0, 0, 0;
+      --color-success: 76, 175, 80;
+      --color-warning: 255, 193, 7;
+      --color-error: 244, 67, 54;
+    }
+
+  }
+}
+
+.rti--container {
+  background-color: rgb(var(--color-secondary-100));
+  --rti-radius: 0.375rem;
+  --rti-s: 0.5rem;
+  --rti-tag: #edf2f7;
+  --rti-tag-remove: #e53e3e;
+  border: none;
+}
+
+.rti--container .rti--input {
+  background-color: rgb(var(--color-secondary-200));
+  color: rgb(var(--color-secondary-800));
+  padding: 0.3rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.rti--tag {
+  background-color: rgb(var(--color-secondary-500));
+  color: rgb(var(--color-secondary-100));
+}
+
+@layer components {
+  .textField__input {
+    @apply w-full px-4 py-3 rounded-xl text-secondary-900 border border-secondary-100 bg-secondary-100 hover:border-primary-500 focus:border-primary-500 focus:bg-secondary-0 transition-all duration-300 ease-out focus:shadow-lg focus:shadow-primary-200 dark:focus:shadow-secondary-200
+  }
+
+  .btn {
+    @apply px-3 py-1 font-bold rounded-xl transition-all duration-300
+  }
+
+  .btn--primary {
+    @apply px-4 py-3 bg-primary-900 text-secondary-100 hover:bg-primary-800 shadow-lg shadow-primary-300
+  }
+
+  .btn--secondary {
+    @apply bg-secondary-600
+  }
+
+  .btn--outline {
+    @apply border border-secondary-700 text-secondary-700;
+  }
+
+  .btn--danger {
+    @apply px-4 py-3 border border-rose-700 text-rose-700;
+  }
+
+  .badge {
+    @apply inline-block whitespace-nowrap rounded-xl px-2 py-0.5;
+  }
+
+  .badge--primary {
+    @apply bg-primary-900 text-white;
+  }
+
+  .badge--secondary {
+    @apply bg-secondary-200 text-secondary-600;
+  }
+
+  .badge--success {
+    @apply bg-green-500 text-white;
+  }
+
+  .badge--danger {
+    @apply bg-red-500 text-white;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Vazir";
+  min-height: 100vh;
+  user-select: none;
+  background-color: rgb(var(--background-app-rgb));
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+button:disabled {
+  cursor: default;
+  background-color: rgb(var(--color-secondary-100), 0.5);
+  pointer-events: none;
+  box-shadow: none;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+table .title-row {
+  background-color: rgb(var(--color-secondary-100));
+}
+
+table td,
+table th {
+  border-bottom: 1px solid rgb(var(--color-secondary-200));
+  text-align: right;
+  white-space: nowrap;
+}
+
+table th {
+  padding: 0.6rem 1rem;
+  color: rgb(var(--color-secondary-600));
+  font-size: 0.9rem;
+}
+
+table td {
+  font-size: 0.85rem;
+  padding: 1rem 1rem;
+  color: rgb(var(--color-secondary-600));
+}
