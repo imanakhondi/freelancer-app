@@ -1,9 +1,10 @@
 import Stat from "../../ui/Stat";
 import { HiCollection, HiOutlineViewGrid, HiUser } from "react-icons/hi";
+import StatsLayout from "../../ui/StatsLayout";
 
 function Stats({ projects, users, proposals }) {
   return (
-    <div className="grid grid-cols-3 gap-x-8">
+    <StatsLayout>
       <Stat
         title="کاربران"
         icon={<HiUser className="w-20 h-20" />}
@@ -22,7 +23,7 @@ function Stats({ projects, users, proposals }) {
         value={projects}
         color="yellow"
       />
-    </div>
+    </StatsLayout>
   );
 }
 

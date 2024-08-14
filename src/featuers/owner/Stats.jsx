@@ -4,6 +4,8 @@ import {
   HiOutlineViewGrid,
 } from "react-icons/hi";
 import Stat from "../../ui/Stat";
+import StatsLayout from "../../ui/StatsLayout";
+
 
 function Stats({ projects }) {
   const numOfProjects = projects.length;
@@ -16,8 +18,8 @@ function Stats({ projects }) {
   );
 
   return (
-    <div className="grid grid-cols-3 gap-x-8">
-      <Stat
+    <StatsLayout>
+       <Stat
         title="پروژه ها"
         icon={<HiOutlineViewGrid className="w-20 h-20" />}
         value={numOfProjects}
@@ -35,7 +37,7 @@ function Stats({ projects }) {
         value={numOgProposals}
         color="yellow"
       />
-    </div>
+    </StatsLayout>
   );
 }
 

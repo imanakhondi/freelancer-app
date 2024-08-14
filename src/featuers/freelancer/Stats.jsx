@@ -5,6 +5,7 @@ import {
 } from "react-icons/hi";
 import toPersianNumbers from "../../utils/toPersianNumbers";
 import Stat from "../../ui/Stat";
+import StatsLayout from "../../ui/StatsLayout";
 
 function Stats({ proposals }) {
   const numOfProposals = proposals.length;
@@ -14,7 +15,7 @@ function Stats({ proposals }) {
   const blance = acceptedProposals.reduce((acc, curr) => curr.price + acc, 0);
 
   return (
-    <div className="grid grid-cols-3 gap-x-8">
+    <StatsLayout>
       <Stat
         title="درخواست ها"
         icon={<HiOutlineViewGrid className="w-20 h-20" />}
@@ -33,7 +34,7 @@ function Stats({ proposals }) {
         value={toPersianNumbers(blance)}
         color="yellow"
       />
-    </div>
+    </StatsLayout>
   );
 }
 
